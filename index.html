@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Choose Your Surprise! 🎨❤️</title>
+  <!-- Google Fonts for Cartoon/Graffiti Styling -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Lilita+One&family=Fredoka:wght@400;600;700&family=Rubik+Spray+Paint&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Decorative Particles & Floating Icons -->
+  <div id="particles-container" class="particles-bg"></div>
+
+  <!-- Custom Sparkle Canvas for cursor trail & hover sparks -->
+  <canvas id="sparkle-canvas"></canvas>
+
+  <!-- Screen Wipe Transition Overlay (Paint Splat Effect) -->
+  <div class="paint-transition-overlay" id="paint-transition">
+    <!-- SVG paint splatter path -->
+    <svg viewBox="0 0 100 100" preserveAspectRatio="none" class="splash-svg">
+      <path id="splash-path" d="M -10 -10 C -10 -10, 50 -10, 110 -10 C 110 50, 110 50, 110 110 C 110 110, 50 110, -10 110 C -10 50, -10 50, -10 -10 Z" fill="#ff4b82" />
+    </svg>
+  </div>
+
+  <!-- Main Pages Container -->
+  <main class="pages-container">
+
+    <!-- HOME PAGE -->
+    <section id="page-home" class="page-view active">
+      <div class="page-content">
+        <!-- Graffiti Title -->
+        <div class="graffiti-title-container">
+          <h1 class="graffiti-title">
+            <span class="word">
+              <span class="char" style="--char-index: 0">C</span>
+              <span class="char" style="--char-index: 1">h</span>
+              <span class="char" style="--char-index: 2">o</span>
+              <span class="char" style="--char-index: 3">o</span>
+              <span class="char" style="--char-index: 4">s</span>
+              <span class="char" style="--char-index: 5">e</span>
+            </span>
+            <span class="word">
+              <span class="char" style="--char-index: 6">Y</span>
+              <span class="char" style="--char-index: 7">o</span>
+              <span class="char" style="--char-index: 8">u</span>
+              <span class="char" style="--char-index: 9">r</span>
+            </span>
+            <span class="word">
+              <span class="char" style="--char-index: 10">S</span>
+              <span class="char" style="--char-index: 11">u</span>
+              <span class="char" style="--char-index: 12">r</span>
+              <span class="char" style="--char-index: 13">p</span>
+              <span class="char" style="--char-index: 14">r</span>
+              <span class="char" style="--char-index: 15">i</span>
+              <span class="char" style="--char-index: 16">s</span>
+              <span class="char" style="--char-index: 17">e</span>
+            </span>
+            <span class="word">
+              <span class="char heart-bounce" style="--char-index: 18">❤️</span>
+            </span>
+          </h1>
+          <!-- Drips graphic underneath -->
+          <div class="title-drip-wrapper">
+            <div class="drip drip-1"></div>
+            <div class="drip drip-2"></div>
+            <div class="drip drip-3"></div>
+            <div class="drip drip-4"></div>
+            <div class="drip drip-5"></div>
+          </div>
+        </div>
+
+        <!-- Three Cards Grid -->
+        <div class="cards-grid">
+          <!-- CARD 1: LOVE -->
+          <div class="card card-pink" onclick="navigateToPage('page-hug', '#ff4b82')">
+            <div class="card-inner">
+              <div class="card-comic-border"></div>
+              <div class="card-sticker">❤️</div>
+              <div class="card-illustration">
+                <!-- SVG Heart Illustration -->
+                <svg viewBox="0 0 100 100" class="card-svg">
+                  <path d="M 50 85 C 50 85 15 55 15 30 C 15 12 35 12 50 28 C 65 12 85 12 85 30 C 85 55 50 85 50 85 Z" fill="#ff2e93" stroke="#111" stroke-width="4.5" stroke-linejoin="round"/>
+                  <!-- Face details -->
+                  <circle cx="40" cy="38" r="4.5" fill="#111" />
+                  <circle cx="60" cy="38" r="4.5" fill="#111" />
+                  <circle cx="41.5" cy="36.5" r="1.5" fill="#fff" />
+                  <circle cx="61.5" cy="36.5" r="1.5" fill="#fff" />
+                  <!-- Cheeks -->
+                  <ellipse cx="34" cy="43" rx="4" ry="2" fill="#ff7da9" />
+                  <ellipse cx="66" cy="43" rx="4" ry="2" fill="#ff7da9" />
+                  <!-- Smile -->
+                  <path d="M 45 44 Q 50 49 55 44" fill="none" stroke="#111" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h2 class="card-title">LOVE</h2>
+              <div class="card-doodles">
+                <span class="doodle doodle-star">★</span>
+                <span class="doodle doodle-cloud">☁</span>
+                <span class="doodle doodle-sparkle">✦</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 2: LOVEE -->
+          <div class="card card-blue" onclick="navigateToPage('page-kiss', '#00bfff')">
+            <div class="card-inner">
+              <div class="card-comic-border"></div>
+              <div class="card-sticker">💙</div>
+              <div class="card-illustration">
+                <!-- SVG Heart with winking face -->
+                <svg viewBox="0 0 100 100" class="card-svg">
+                  <path d="M 50 85 C 50 85 15 55 15 30 C 15 12 35 12 50 28 C 65 12 85 12 85 30 C 85 55 50 85 50 85 Z" fill="#00bfff" stroke="#111" stroke-width="4.5" stroke-linejoin="round"/>
+                  <!-- Winking Face details -->
+                  <path d="M 35 39 Q 40 35 45 39" fill="none" stroke="#111" stroke-width="3.5" stroke-linecap="round" />
+                  <circle cx="60" cy="38" r="4.5" fill="#111" />
+                  <circle cx="61.5" cy="36.5" r="1.5" fill="#fff" />
+                  <!-- Cheeks -->
+                  <ellipse cx="34" cy="43" rx="4" ry="2" fill="#7be1ff" />
+                  <ellipse cx="66" cy="43" rx="4" ry="2" fill="#7be1ff" />
+                  <!-- Tongue smile -->
+                  <path d="M 46 44 Q 50 48 54 44" fill="none" stroke="#111" stroke-width="3" stroke-linecap="round"/>
+                  <path d="M 48 46 Q 50 51 52 46 Z" fill="#ff4b82" stroke="#111" stroke-width="1.5" />
+                </svg>
+              </div>
+              <h2 class="card-title">LOVEE</h2>
+              <div class="card-doodles">
+                <span class="doodle doodle-heart">♥</span>
+                <span class="doodle doodle-sparkle">✦</span>
+                <span class="doodle doodle-bolt">⚡</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 3: LOVEEE -->
+          <div class="card card-yellow" onclick="navigateToPage('page-flower', '#ffd700')">
+            <div class="card-inner">
+              <div class="card-comic-border"></div>
+              <div class="card-sticker">💛</div>
+              <div class="card-illustration">
+                <!-- SVG Heart with funny face -->
+                <svg viewBox="0 0 100 100" class="card-svg">
+                  <path d="M 50 85 C 50 85 15 55 15 30 C 15 12 35 12 50 28 C 65 12 85 12 85 30 C 85 55 50 85 50 85 Z" fill="#ffd700" stroke="#111" stroke-width="4.5" stroke-linejoin="round"/>
+                  <!-- Cute big eyes -->
+                  <circle cx="38" cy="38" r="5.5" fill="#111" />
+                  <circle cx="62" cy="38" r="5.5" fill="#111" />
+                  <circle cx="36" cy="36" r="2" fill="#fff" />
+                  <circle cx="60" cy="36" r="2" fill="#fff" />
+                  <circle cx="40" cy="40" r="1" fill="#fff" />
+                  <circle cx="64" cy="40" r="1" fill="#fff" />
+                  <!-- Cheeks -->
+                  <ellipse cx="30" cy="44" rx="4" ry="2" fill="#ffe97d" />
+                  <ellipse cx="70" cy="44" rx="4" ry="2" fill="#ffe97d" />
+                  <!-- Big open mouth smile -->
+                  <path d="M 43 45 C 43 45, 50 54, 57 45 Z" fill="#ff4b82" stroke="#111" stroke-width="2.5" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <h2 class="card-title">LOVEEE</h2>
+              <div class="card-doodles">
+                <span class="doodle doodle-star">★</span>
+                <span class="doodle doodle-cloud">☁</span>
+                <span class="doodle doodle-heart">♥</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 2: LOVE HUG -->
+    <section id="page-hug" class="page-view">
+      <div class="page-content">
+        <!-- Graffiti Title Page 2 -->
+        <div class="page-header-container">
+          <h1 class="page-title title-hug">
+            <span class="char" style="--char-index: 0">M</span>
+            <span class="char" style="--char-index: 1">a</span>
+            <span class="char" style="--char-index: 2">r</span>
+            <span class="char" style="--char-index: 3">i</span>
+            <span class="char" style="--char-index: 4">a</span>
+            <span class="char" style="--char-index: 5">'</span>
+            <span class="char" style="--char-index: 6">s</span>
+            <span class="spacer">&nbsp;</span>
+            <span class="char" style="--char-index: 7">L</span>
+            <span class="char" style="--char-index: 8">o</span>
+            <span class="char" style="--char-index: 9">v</span>
+            <span class="char" style="--char-index: 10">e</span>
+            <span class="spacer">&nbsp;</span>
+            <span class="char" style="--char-index: 11">H</span>
+            <span class="char" style="--char-index: 12">u</span>
+            <span class="char" style="--char-index: 13">g</span>
+            <span class="spacer">&nbsp;</span>
+            <span class="char" style="--char-index: 14">F</span>
+            <span class="char" style="--char-index: 15">o</span>
+            <span class="char" style="--char-index: 16">r</span>
+            <span class="spacer">&nbsp;</span>
+            <span class="char" style="--char-index: 17">Y</span>
+            <span class="char" style="--char-index: 18">o</span>
+            <span class="char" style="--char-index: 19">u</span>
+            <span class="spacer">&nbsp;</span>
+            <span class="char heart-pulse" style="--char-index: 20">🤗❤️</span>
+          </h1>
+          <div class="title-drip-wrapper">
+            <div class="drip drip-hug-1"></div>
+            <div class="drip drip-hug-2"></div>
+            <div class="drip drip-hug-3"></div>
+          </div>
+        </div>
+
+        <!-- Image Container -->
+        <div class="image-container-wrapper">
+          <div class="comic-frame-border"></div>
+          <div class="image-inner-container">
+            <img src="images/hg.jpg" alt="Maria's Love Hug For You" class="surprise-image" id="hug-preview-img">
+            <div class="placeholder-container" id="hug-placeholder" style="display: none;">
+              <!-- Cartoon Hug SVG -->
+              <svg viewBox="0 0 100 100" class="placeholder-svg">
+                <!-- Two cute cartoon emojis hugging -->
+                <g fill="none" stroke="#111" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+                  <!-- Left emoji hugging -->
+                  <circle cx="40" cy="50" r="22" fill="#ffd700" />
+                  <circle cx="34" cy="45" r="2.5" fill="#111" />
+                  <circle cx="48" cy="45" r="2.5" fill="#111" />
+                  <ellipse cx="30" cy="49" rx="2" ry="1" fill="#ff4b82" />
+                  <ellipse cx="52" cy="49" rx="2" ry="1" fill="#ff4b82" />
+                  <path d="M 38 53 Q 41 56 44 53" />
+                  
+                  <!-- Right emoji hugging -->
+                  <circle cx="62" cy="50" r="22" fill="#ff7da9" />
+                  <circle cx="54" cy="45" r="2.5" fill="#111" />
+                  <circle cx="68" cy="45" r="2.5" fill="#111" />
+                  <ellipse cx="50" cy="49" rx="2" ry="1" fill="#ff4b82" />
+                  <ellipse cx="72" cy="49" rx="2" ry="1" fill="#ff4b82" />
+                  <path d="M 58 53 Q 61 56 64 53" />
+                  
+                  <!-- Hugging arms -->
+                  <path d="M 22 55 Q 35 63 48 55" />
+                  <path d="M 80 55 Q 67 63 54 55" />
+                </g>
+              </svg>
+              <p class="placeholder-text">Choose your Hug image ❤️</p>
+            </div>
+          </div>
+          <!-- Cute floating corner badges -->
+          <div class="badge badge-top-left">🧸</div>
+          <div class="badge badge-bottom-right">💖</div>
+        </div>
+
+        <!-- Buttons Row -->
+        <div class="page-actions-row">
+          <input type="file" id="hug-image-input" accept="image/*" style="display: none;">
+          <button class="choose-btn btn-pink" id="choose-hug-btn">
+            <span class="btn-text">📸 Choose Hug Image</span>
+          </button>
+          <button class="back-btn btn-pink" onclick="navigateToPage('page-home', '#ff4b82')">
+            <span class="btn-text">⬅ Back to Home</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 3: LOVE KISS -->
+    <section id="page-kiss" class="page-view">
+      <div class="page-content">
+        <!-- Graffiti Title Page 3 -->
+        <div class="page-header-container">
+          <h1 class="page-title title-kiss">
+            <span class="char" style="--char-index: 0">M</span>
+            <span class="char" style="--char-index: 1">a</span>
+            <span class="char" style="--char-index: 2">r</span>
+            <span class="char" style="--char-index: 3">i</span>
+            <span class="char" style="--char-index: 4">a</span>
+            <span class="char" style="--char-index: 5">'</span>
+            <span class="char" style="--char-index: 6">s</span>
+            <span class="spacer">&nbsp;</span>
+            <span class="char" style="--char-index: 7">L</span>
+            <span class="char" style="--char-index: 8">o</span>
+            <span class="char" style="--char-index: 9">v</span>
+            <span class="char" style="--char-index: 10">e</span>
+            <span class="spacer">&nbsp;</span>
+            <span class="char" style="--char-index: 11">K</span>
+            <span class="char" style="--char-index: 12">i</span>
+            <span class="char" style="--char-index: 13">s</span>
+            <span class="char" style="--char-index: 14">s</span>
+            <span class="spacer">&nbsp;</span>
+            <span class="char" style="--char-index: 15">F</span>
+            <span class="char" style="--char-index: 16">o</span>
+            <span class="char" style="--char-index: 17">r</span>
+            <span class="spacer">&nbsp;</span>
+            <span class="char" style="--char-index: 18">Y</span>
+            <span class="char" style="--char-index: 19">o</span>
+            <span class="char" style="--char-index: 20">u</span>
+            <span class="spacer">&nbsp;</span>
+            <span class="char winking-bounce" style="--char-index: 21">😘❤️</span>
+          </h1>
+          <div class="title-drip-wrapper">
+            <div class="drip drip-kiss-1"></div>
+            <div class="drip drip-kiss-2"></div>
+            <div class="drip drip-kiss-3"></div>
+          </div>
+        </div>
+
+        <!-- Image Container -->
+        <div class="image-container-wrapper">
+          <div class="comic-frame-border"></div>
+          <div class="image-inner-container">
+            <img src="images/ks.jpg" alt="Maria's Love Kiss For You" class="surprise-image" id="kiss-preview-img">
+            <div class="placeholder-container" id="kiss-placeholder" style="display: none;">
+              <!-- Cute Kiss Lips SVG -->
+              <svg viewBox="0 0 100 100" class="placeholder-svg">
+                <g fill="none" stroke="#111" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round">
+                  <!-- Lip contours -->
+                  <path d="M 15 50 Q 32.5 35 50 43 Q 67.5 35 85 50 Q 67.5 68 50 63 Q 32.5 68 15 50 Z" fill="#ff1c60" />
+                  <path d="M 15 50 Q 50 52 85 50" />
+                  <!-- Highlights -->
+                  <path d="M 30 43 Q 40 40 45 44" stroke="#fff" stroke-width="2.5" />
+                  <path d="M 55 44 Q 60 40 70 43" stroke="#fff" stroke-width="2.5" />
+                </g>
+              </svg>
+              <p class="placeholder-text">Choose your Kiss image 💋</p>
+            </div>
+          </div>
+          <!-- Cute floating corner badges -->
+          <div class="badge badge-top-right">💋</div>
+          <div class="badge badge-bottom-left">✨</div>
+        </div>
+
+        <!-- Buttons Row -->
+        <div class="page-actions-row">
+          <input type="file" id="kiss-image-input" accept="image/*" style="display: none;">
+          <button class="choose-btn btn-blue" id="choose-kiss-btn">
+            <span class="btn-text">💋 Choose Kiss Image</span>
+          </button>
+          <button class="back-btn btn-blue" onclick="navigateToPage('page-home', '#00bfff')">
+            <span class="btn-text">⬅ Back to Home</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 4: LOVE FLOWER -->
+    <section id="page-flower" class="page-view">
+      <div class="page-content">
+        <!-- Graffiti Title Page 4 -->
+        <div class="page-header-container">
+          <h1 class="page-title title-flower">
+            <span class="char" style="--char-index: 0">M</span>
+            <span class="char" style="--char-index: 1">a</span>
+            <span class="char" style="--char-index: 2">r</span>
+            <span class="char" style="--char-index: 3">i</span>
+            <span class="char" style="--char-index: 4">a</span>
+            <span class="char" style="--char-index: 5">'</span>
+            <span class="char" style="--char-index: 6">s</span>
+            <span class="spacer">&nbsp;</span>
+            <span class="char" style="--char-index: 7">L</span>
+            <span class="char" style="--char-index: 8">o</span>
+            <span class="char" style="--char-index: 9">v</span>
+            <span class="char" style="--char-index: 10">e</span>
+            <span class="spacer">&nbsp;</span>
+            <span class="char" style="--char-index: 11">F</span>
+            <span class="char" style="--char-index: 12">l</span>
+            <span class="char" style="--char-index: 13">o</span>
+            <span class="char" style="--char-index: 14">w</span>
+            <span class="char" style="--char-index: 15">e</span>
+            <span class="char" style="--char-index: 16">r</span>
+            <span class="spacer">&nbsp;</span>
+            <span class="char" style="--char-index: 17">F</span>
+            <span class="char" style="--char-index: 18">o</span>
+            <span class="char" style="--char-index: 19">r</span>
+            <span class="spacer">&nbsp;</span>
+            <span class="char" style="--char-index: 20">Y</span>
+            <span class="char" style="--char-index: 21">o</span>
+            <span class="char" style="--char-index: 22">u</span>
+            <span class="spacer">&nbsp;</span>
+            <span class="char flower-spin" style="--char-index: 23">🌸❤️</span>
+          </h1>
+          <div class="title-drip-wrapper">
+            <div class="drip drip-flower-1"></div>
+            <div class="drip drip-flower-2"></div>
+            <div class="drip drip-flower-3"></div>
+          </div>
+        </div>
+
+        <!-- Image Container -->
+        <div class="image-container-wrapper">
+          <div class="comic-frame-border"></div>
+          <div class="image-inner-container">
+            <img src="images/flr.jpg" alt="Maria's Love Flower For You" class="surprise-image" id="flower-preview-img">
+            <div class="placeholder-container" id="flower-placeholder" style="display: none;">
+              <!-- Cute Cartoon Daisy SVG -->
+              <svg viewBox="0 0 100 100" class="placeholder-svg">
+                <g fill="none" stroke="#111" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round">
+                  <!-- Stem and Leaf -->
+                  <path d="M 50 65 L 50 90" stroke-width="5.5" stroke="#2ecc71" />
+                  <path d="M 50 78 Q 65 74 60 68 Q 52 72 50 78 Z" fill="#2ecc71" />
+                  
+                  <!-- Petals -->
+                  <circle cx="50" cy="35" r="12" fill="#fff" />
+                  <circle cx="50" cy="65" r="12" fill="#fff" />
+                  <circle cx="35" cy="50" r="12" fill="#fff" />
+                  <circle cx="65" cy="50" r="12" fill="#fff" />
+                  <circle cx="39" cy="39" r="12" fill="#fff" />
+                  <circle cx="61" cy="39" r="12" fill="#fff" />
+                  <circle cx="39" cy="61" r="12" fill="#fff" />
+                  <circle cx="61" cy="61" r="12" fill="#fff" />
+                  
+                  <!-- Center yellow head -->
+                  <circle cx="50" cy="50" r="15" fill="#ffd700" />
+                  <!-- Smile face on flower -->
+                  <circle cx="45" cy="47" r="2.5" fill="#111" />
+                  <circle cx="55" cy="47" r="2.5" fill="#111" />
+                  <path d="M 45 53 Q 50 57 55 53" />
+                </g>
+              </svg>
+              <p class="placeholder-text">Choose your Flower image 🌸</p>
+            </div>
+          </div>
+          <!-- Cute floating corner badges -->
+          <div class="badge badge-top-left">🌸</div>
+          <div class="badge badge-bottom-right">🦋</div>
+        </div>
+
+        <!-- Buttons Row -->
+        <div class="page-actions-row">
+          <input type="file" id="flower-image-input" accept="image/*" style="display: none;">
+          <button class="choose-btn btn-yellow" id="choose-flower-btn">
+            <span class="btn-text">🌸 Choose Flower Image</span>
+          </button>
+          <button class="back-btn btn-yellow" onclick="navigateToPage('page-home', '#ffd700')">
+            <span class="btn-text">⬅ Back to Home</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
